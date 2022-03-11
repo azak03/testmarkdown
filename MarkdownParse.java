@@ -12,7 +12,6 @@ public class MarkdownParse {
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
-            System.out.format("%d\t%d\t%s\n", currentIndex, nextOpenBracket, toReturn);
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
@@ -28,6 +27,7 @@ public class MarkdownParse {
             else {
                 currentIndex = currentIndex + 1;
             }
+            System.out.format("%d\t%d\t%s\n", currentIndex, nextOpenBracket, toReturn);
         }
         return toReturn;
     }
